@@ -10,6 +10,11 @@ def home(request):
 
   return render(request , 'home.html')
 
+@login_required(login_url= '/login/')
+def default(request):
+  return render(request , 'home.html')
+
+
 def login_page(request):
   if request.method == "POST":
     data = request.POST
